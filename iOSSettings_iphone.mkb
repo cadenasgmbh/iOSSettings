@@ -1,0 +1,13 @@
+#!/usr/bin/env mkb
+# Builder mkb file for the iOSSettings extension on iphone
+platform IPHONE
+
+options
+{
+    lib
+    output-name="lib/iphone/libiOSSettings.a"
+    output-name-debug="lib/iphone/libiOSSettings_d.a"
+}
+define S3E_BUILD_EXT
+
+subproject iOSSettings_build

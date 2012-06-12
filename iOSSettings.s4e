@@ -1,0 +1,14 @@
+
+include:
+#include <s3eTypes.h>
+
+functions:
+
+/**
+ * Get the bool setting.
+ * 
+ * @return true or false
+ * @par Required Header Files
+ * iOSSettings.h
+ */
+bool iOSSettingsGetBool(const char* settingsname) false
