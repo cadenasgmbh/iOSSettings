@@ -27,3 +27,8 @@ bool iOSSettingsGetBool(const char* settingsname)
 {
 	return iOSSettingsGetBool_platform(settingsname);
 }
+
+void iOSSettingsSetBool(const char* settingsname, bool value)
+{
+  iOSSettingsSetBool_platform(settingsname, value);
+}

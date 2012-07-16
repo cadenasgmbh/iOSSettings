@@ -35,6 +35,8 @@ s3eBool iOSSettingsAvailable();
  */
 bool iOSSettingsGetBool(const char* settingsname);
 
+void iOSSettingsSetBool(const char* settingsname, bool value);
+
 S3E_END_C_DECL
 
 #endif /* !S3E_EXT_IOSSETTINGS_H */

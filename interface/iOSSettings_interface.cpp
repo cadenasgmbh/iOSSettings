@@ -12,6 +12,7 @@
  * Definitions for functions types passed to/from s3eExt interface
  */
 typedef       bool(*iOSSettingsGetBool_t)(const char* settingsname);
+typedef       void(*iOSSettingsSetBool_t)(const char* settingsname, bool value);
 
 /**
  * struct that gets filled in by iOSSettingsRegister
@@ -19,6 +20,7 @@ typedef       bool(*iOSSettingsGetBool_t)(const char* settingsname);
 typedef struct iOSSettingsFuncs
 {
     iOSSettingsGetBool_t m_iOSSettingsGetBool;
+    iOSSettingsSetBool_t m_iOSSettingsSetBool;
 } iOSSettingsFuncs;
 
 static iOSSettingsFuncs g_Ext;
@@ -71,4 +73,14 @@ bool iOSSettingsGetBool(const char* settingsname)
         return false;
 
     return g_Ext.m_iOSSettingsGetBool(settingsname);
+}
+
+void iOSSettingsSetBool(const char* settingsname, bool value)
+{
+    IwTrace(IOSSETTINGS_VERBOSE, ("calling iOSSettings[1] func: iOSSettingsSetBool"));
+
+    if (!_extLoad())
+        return;
+
+    g_Ext.m_iOSSettingsSetBool(settingsname, value);
 }

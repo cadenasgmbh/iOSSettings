@@ -43,6 +43,6 @@ void iOSSettingsTerminate();
  */
 void iOSSettingsTerminate_platform();
 bool iOSSettingsGetBool_platform(const char* settingsname);
-
+bool iOSSettingsSetBool_platform(const char* settingsname, bool value);
 
 #endif /* !IOSSETTINGS_INTERNAL_H */

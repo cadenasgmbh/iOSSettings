@@ -12,3 +12,4 @@ functions:
  * iOSSettings.h
  */
 bool iOSSettingsGetBool(const char* settingsname) false
+void iOSSettingsSetBool(const char* settingsname, bool value)

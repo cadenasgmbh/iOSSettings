@@ -28,3 +28,12 @@ bool iOSSettingsGetBool_platform(const char* settingsname)
     userDefaults = [[NSUserDefaults standardUserDefaults] retain]; 
     return [userDefaults boolForKey:name];
 }
+
+
+void iOSSettingsSetBool_platform(const char* settingsname, bool value)
+{
+    NSUserDefaults *userdefaults;
+    NSString *name = [NSString stringWithUTF8String:settingsname];
+    userDefaults = [[NSUserDefaults standardUserDefaults] retain];
+    [userDefaults setBool:value forKey: name];
+}
