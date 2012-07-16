@@ -7,6 +7,8 @@
  * be overwritten (unless --force is specified) and is intended to be modified.
  */
 #include "iOSSettings_internal.h"
+#import <Foundation/NSString.h>
+#import <Foundation/NSUserDefaults.h>
 
 s3eResult iOSSettingsInit_platform()
 {
@@ -21,6 +23,8 @@ void iOSSettingsTerminate_platform()
 
 bool iOSSettingsGetBool_platform(const char* settingsname)
 {
-    // Native iOS Objective-C code here!
-    return false;
+    NSUserDefaults *userDefaults;
+    NSString *name = [NSString stringWithUTF8String:settingsname];
+    userDefaults = [[NSUserDefaults standardUserDefaults] retain]; 
+    return [userDefaults boolForKey:name];
 }
