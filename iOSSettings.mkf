@@ -37,6 +37,6 @@ if {{ not defined IW_MKF_IWCRT}}
 deployments
 {
     #iphone-link-opts="-framework X" #Use this to bring in any additional link options needed
-    iphone-link-lib="iOSSettings"
-    iphone-link-libdir="lib/iphone"
+    iphone-link-libs="iOSSettings"
+    iphone-link-libdirs="lib/iphone"
 }
